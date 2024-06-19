@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #list li {
+            background-color: #f5f5f5;
+        }
+        .highlight {
+            background-color: yellow !important;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<button onclick="highlight()">Highlight Item 2</button>
+<button onclick="addElement()">Add Elementtttt</button>
+<script>
+    function highlight() {
+        const item = document.querySelector("#list li:nth-child(2)");
+        item.classList.add("highlight")
+    }
+
+
+    function addElement() {
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < 10000; i++) {
+            const li = document.createElement("li")
+            li.textContent = `Item ${i + 1}`
+            fragment.appendChild(li)
+        }
+        document.getElementById("list").appendChild(fragment)
+    }
+</script>
+</body>
+</html>
