@@ -6,3 +6,5 @@
 *.iml
 out
 gen
+
+/demo/node_modules
